@@ -78,10 +78,13 @@ secondSibling.classList.remove('img-item');
 thirdSibling.classList.remove('img-item');
 fourthSibling.classList.remove('img-item');
 
+//event delegation by targeting the parent
 thumbnails.addEventListener('click', function(e){
     console.log(e.target.getAttribute('id') + ' is clicked');
     const target = e.target;
+    //targeting the thumbnails one by one and applying style
     if (target.matches('#thumbnail')){
+        //this image comes from the array of images to show the product in big
         imgsDOM = `<img id="thumbnail" 
         src="${bigImages[0]}">`;
         visualProducts.innerHTML = imgsDOM;
@@ -110,37 +113,6 @@ thumbnails.addEventListener('click', function(e){
     }
    
 })
-
-
-
-
-
-
-// function clickImage(){
-//     fisrtThumbnail.style.border = '3px solid hsl(26, 100%, 55%)';
-//     imgsDOM = '';
-//     imgsDOM = `<img class="thumbnail" id="thumbnail" src="${bigImages[0]}">`;
-//     visualProducts.innerHTML = imgsDOM;
-// }
-
-// fisrtThumbnail.addEventListener("click", clickImage())
-
-// // fisrtThumbnail.addEventListener("click", function(){
-// //     fisrtThumbnail.style.border = '3px solid hsl(26, 100%, 55%)';
-// //     imgsDOM = '';
-// //     imgsDOM = `<img class="thumbnail" id="thumbnail" src="${bigImages[0]}">`;
-// //     visualProducts.innerHTML = imgsDOM;
-// // })
-
-// secondThumbnail.addEventListener("click", function(){
-//     secondThumbnail.style.border = '3px solid hsl(26, 100%, 55%)';
-//     imgsDOM = `<img class="thumbnail" id="thumbnail" src="${bigImages[1]}">`;
-//     visualProducts.innerHTML = imgsDOM;
-// })
-
-
-
-
 
 
 
