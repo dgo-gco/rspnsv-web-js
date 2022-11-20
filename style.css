@@ -63,7 +63,7 @@ a {
 
 .cart-chart {
     width: 250px;
-    height: 150px;
+    height: auto;
     border-radius: 5px;
     box-shadow: 3px 3px 15px rgb(49, 48, 48);
     border: none;
@@ -85,13 +85,80 @@ a {
     padding-top: 40px;
 }
 
-.cart{
+.cart {
     position: relative;
+    top: 10px;
+    height: 50px;
+}
+
+.empty-car {
+    padding-bottom: 40px;
+}
+
+.notif {
+    background-color: hsl(26, 100%, 55%);
+    border-radius: 45%;
+    font-size: 10px;
+    color: white;
+    position: absolute;
+    bottom: 40px; 
+    left: 16px;
+    width: 10px;
+    text-align: center;
+    z-index: 2;
 }
 
 .cart > img {
     z-index: 2;
     position: relative;
+    cursor: pointer;
+}
+
+.added-image {
+    height: 44px;
+    width: 44px;
+    border-radius: 4px;
+    display: block;
+}
+
+.cont-carrito {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+}
+
+.delete {
+    width: 14px;
+    height: 14px;
+}
+
+.shop-txt {
+    color: hsl(219, 9%, 45%);
+    font-size: 13px;
+    margin: 10px;
+}
+
+.b-txt {
+    font-weight: bold;
+}
+
+.btn-carrito {
+    display: flex;
+    flex-direction: column;
+}
+
+.check-btn {
+    background-color: hsl(26, 100%, 55%);
+    border: none;
+    border-radius: 5px;
+    padding: 15px 10px;
+    margin: 5px;
+    color: white;
+    margin: 10px;
+}
+
+.check-btn:hover {
+    background-color: hsl(26, 80%, 45%);
     cursor: pointer;
 }
 
@@ -101,10 +168,16 @@ main {
     margin-top: 60px;
 }
 
+.product-visuals {
+    display: flex;
+    flex-direction: column;
+}
+
 .bigger {
     position: relative;
     width: 500px;
     height: 500px;
+    margin-left: -5px;
 }
 
 .bigger > img {
@@ -117,16 +190,39 @@ main {
 }
 
 .thumbnails {
-    margin-left: 40px;
-    margin-top: 20px;
+    margin-left: 35px;
+    margin-top: 40px;
 }
 
-.thumbnails > img {
+.thumbnail {
     width: 100px;
     height: 100%;
-    margin: 12px;
     border-radius: 8px;
+}
+
+.thumbnail:hover {
     cursor: pointer;
+    opacity: 0.5;
+}
+
+.img-items {
+    display: flex;
+    gap: 33px;
+}
+
+.img-item {
+    border: 3px solid hsl(26, 100%, 55%);
+    border-radius: 12px;
+}
+
+.img-item > img {
+    opacity: 0.5;
+}
+
+a > img {
+    border-radius: 8px;
+    width: 100px;
+    height: 100%;
 }
 
 .main-text {
