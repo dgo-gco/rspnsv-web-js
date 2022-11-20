@@ -88,12 +88,17 @@ thumbnails.addEventListener('click', function(e){
         imgsDOM = `<img id="thumbnail" 
         src="${bigImages[0]}">`;
         visualProducts.innerHTML = imgsDOM;
+        secondSibling.classList.remove('img-item');
+        thirdSibling.classList.remove('img-item');
+        fourthSibling.classList.remove('img-item');
         firstThumbnail.classList.add('img-item');
     } else if (target.matches('#second-thumbnail')) {
         imgsDOM = `<img id="thumbnail" 
         src="${bigImages[1]}">`;
         visualProducts.innerHTML = imgsDOM;
         firstThumbnail.classList.remove('img-item');
+        thirdSibling.classList.remove('img-item');
+        fourthSibling.classList.remove('img-item');
         secondSibling.classList.add('img-item');
     } else if (target.matches('#third-thumbnail')) {
         imgsDOM = `<img id="thumbnail" 
@@ -101,6 +106,7 @@ thumbnails.addEventListener('click', function(e){
         visualProducts.innerHTML = imgsDOM;
         firstThumbnail.classList.remove('img-item');
         secondSibling.classList.remove('img-item');
+        fourthSibling.classList.remove('img-item');
         thirdSibling.classList.add('img-item');
     } else {
         imgsDOM = `<img id="thumbnail" 
