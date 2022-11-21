@@ -19,6 +19,10 @@ header {
     align-items: center;
 }
 
+.menu-bars{
+    display: none;
+}
+
 ul {
     display: flex;
     list-style: none;
@@ -168,6 +172,7 @@ main {
     margin-top: 60px;
 }
 
+/* images i'll use for the lightbox */
 .product-visuals {
     display: flex;
     flex-direction: column;
@@ -219,11 +224,7 @@ main {
     opacity: 0.5;
 }
 
-a > img {
-    border-radius: 8px;
-    width: 100px;
-    height: 100%;
-}
+/* until here images to use fot the lightbox */
 
 .main-text {
     margin-top: 50px;
@@ -330,10 +331,85 @@ a > img {
     opacity: 75%;
 }
 
+/* STYLING THE LIGHTBOX */
+
+
+
+
+
+
+/* LIGHTBOX */
+
 
 .attribution {
     font-size: 11px; text-align: center;
 }
 .attribution a {
     color: hsl(228, 45%, 44%);
+}
+
+@media screen and (max-width: 501px){
+
+    .menu-bars {
+        display: block;
+        margin-right: 20px;
+    }
+
+    .options {
+        display: none;
+    }
+
+    main {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 500px 400px;;
+        margin-top: 0px;
+    }
+
+    .thumbnails {
+        display: none;
+    }
+
+    .bigger {
+        width: 100%;
+    }
+
+    .bigger > img {
+        width: 100%;
+        height: 100px;
+        height: auto;
+        border-radius: 0px;
+        margin-left: 0px;
+        margin-top: 0px;
+    }
+
+    .main-text {
+        margin: 10px 20px;
+        line-height: 25px;
+    }
+
+    .price {
+        display: flex;
+        justify-content: space-between;
+        margin-right: 10px;
+    }
+
+    .now {
+        display: flex;
+    }
+
+    .buttons {
+        display: block;
+        margin: 10px;
+    }
+
+    .no-of-products {
+        width: 100%;
+        margin-top: 15px;
+        margin-bottom: 10px;
+    }
+
+    .addtocart {
+       width: 100%;
+    }
 }
