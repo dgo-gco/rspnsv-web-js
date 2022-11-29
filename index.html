@@ -42,9 +42,6 @@
     <div class="product-visuals">
       <div class="bigger">
        <img src="/images/image-product-1.jpg" alt="" class="img-1">
-       <!-- <img src="/images/image-product-2.jpg" alt="" class="img-2">
-       <img src="/images/image-product-3.jpg" alt="" class="img-3">
-       <img src="/images/image-product-4.jpg" alt="" class="img-4"> -->
       </div>
 
       <div class="thumbnails">
@@ -84,6 +81,35 @@
         <button class="addtocart"><img src="/images/icon-cart.svg" alt="" class="btn-crt">Add to cart</button>
       </div>
     </div>
+
+    <div id="Lightbox" class="modal">
+      <span class="close pointer">&times;</span>
+      <div class="lightbox-content">
+          <div class="slide">
+              <img src="/images/image-product-1.jpg" alt="" class="img-1">
+          </div>
+          <div class="slide">
+            <img src="/images/image-product-2.jpg" alt="" class="img-2">
+        </div>
+        <div class="slide">
+            <img src="/images/image-product-3.jpg" alt="" class="img-3">
+        </div>
+        <div class="slide">
+            <img src="/images/image-product-4.jpg" alt="" class="img-4"> 
+        </div> 
+      </div>
+
+      <div class="lightbox-thumbnails" id="thumbnails-lightbox">
+          <div class="thumbnails-container"> 
+            <div class="img-lightbox"><img class="thumbnail-lb" id="first-thmbl-lb" src="/images/image-product-1-thumbnail.jpg" alt="shoes"></div>
+            <div class="img-lightbox"><img class="thumbnail-lb" id="second-thmbl-lb" src="/images/image-product-2-thumbnail.jpg" alt="white shoes"></div>
+            <div class="img-lightbox"><img class="thumbnail-lb" id="third-thmbl-lb" src="/images/image-product-3-thumbnail.jpg" alt="white shoes"></div>
+            <div class="img-lightbox"><img class="thumbnail-lb" id="fourth-thmbl-lb" src="/images/image-product-4-thumbnail.jpg" alt="cool shoes"></div>
+          </div>
+      </div> 
+        <a class="previous">&#10094;</a>
+        <a class="next">&#10095;</a>
+      </div>
 </main>
 
 

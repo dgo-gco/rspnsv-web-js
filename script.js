@@ -22,7 +22,20 @@ const carrito = document.querySelector('.cart-chart');
 const emptyCar = document.querySelector('.empty-car');
 const car = document.querySelector('.cart');
 
+//TO DISPLAY THE LIGHTBOX
+const lightbox = document.querySelector('#Lightbox');
+const slideImg = document.querySelector('.bigger');
+const closeLightbox = document.querySelector('.close');
 
+    
+ slideImg.addEventListener('click', function(){
+    lightbox.style.display = 'block';
+})
+
+closeLightbox.addEventListener('click', function(){
+    lightbox.style.display = 'none';
+})
+//LIGHTBOX
 
 plus.addEventListener("click", ()=>{
     a++;
@@ -120,6 +133,96 @@ thumbnails.addEventListener('click', function(e){
    
 })
 
+var slideIndex = 1;
+showSlides(slideIndex);
+
+const nextImg = document.querySelector('.next');
+const prevImg = document.querySelector('.previous');
+
+const firstThumbnailLbx = document.querySelector('.img-lightbox');
+const secondThumbnailLbx = firstThumbnailLbx.nextElementSibling;
+const thirdThumbnailLbx = secondThumbnailLbx.nextElementSibling;
+const fourthThumbnailLbx = thirdThumbnailLbx .nextElementSibling;
+
+nextImg.addEventListener('click', function(){
+    showSlides(slideIndex += 1);
+});
+
+prevImg.addEventListener('click', function(){
+    showSlides(slideIndex -= 1);
+    //Running the function and substracting one so we can go backwards
+});
+
+function currentSlide(n) {
+    showSlides(slideIndex = n);
+}
+
+firstThumbnailLbx.addEventListener('click', ()=>{
+    currentSlide(1);
+});
+
+secondThumbnailLbx.addEventListener('click', ()=>{
+    currentSlide(2);
+});
+
+thirdThumbnailLbx.addEventListener('click', ()=>{
+    currentSlide(3);
+});
+
+fourthThumbnailLbx.addEventListener('click', ()=>{
+    currentSlide(4);
+});
+
+
+function showSlides(n){
+    let i;
+    //bringing the images i showcase in the lightbox
+    let slides = document.getElementsByClassName('slide');
+    //thumbnails in the lightbox
+    let thmbsImgs = document.getElementsByClassName('thumbnail-lb');
+    console.log(slides);
+    console.log(thmbsImgs);
+
+    if (n > slides.length){
+        slideIndex = 1;
+    } //if our parameter(number of clicks) arrives til be bigger than the lenght (last image) return to one
+    if(n < 1) {
+        slideIndex = slides.length;
+    } //if our click wants to go to less than one, start showing the images again(slides.lenght)
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    slides[slideIndex-1].style.display = "block";
+
+    for (i = 0; i < thmbsImgs.length; i++) {
+        thmbsImgs[i].className = thmbsImgs[i].className.replace(" active", "");
+    }//iterate through the thumbnails and add/delete a class to show them or unshow them
+    
+    thmbsImgs[slideIndex-1].className += " active";
+}
+
+if(window.innerWidth < 376){
+    slideImg.addEventListener('click', function(){
+        lightbox.style.display = 'none';
+    })
+
+    let mobilePrev = document.createElement('a');
+    let mobileNext = document.createElement('a');
+
+    visualProducts.append(mobilePrev);
+    visualProducts.append(mobileNext);
+    mobilePrev.innerHTML = '&#10094;';
+    mobileNext.innerHTML = '&#10095;';
+    
+
+    mobilePrev.classList.add('arrowslide');
+    mobileNext.classList.add('arrowslide');
+
+    console.log(mobileNext);
+}
+
+
+    
 
 
 //I need to link each image with its correspondent bigger image
